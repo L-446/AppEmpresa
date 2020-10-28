@@ -25,15 +25,26 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnAbrirClienteCadastroActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="mnAbriClienteLista">
+                <MenuItem class="javax.swing.JMenuItem" name="mnAbriClienteListaClientes">
                   <Properties>
                     <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                       <KeyStroke key="Alt+L"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Lista"/>
+                    <Property name="text" type="java.lang.String" value="Lista de Clientes"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnAbriClienteListaActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnAbriClienteListaClientesActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="mnAbrirClienteListaUser">
+                  <Properties>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Alt+U"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Lista de Usuarios"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnAbrirClienteListaUserActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>

@@ -33,7 +33,8 @@ public class FormEmpresa extends javax.swing.JFrame {
         mnAbrir = new javax.swing.JMenu();
         mnAbrirCliente = new javax.swing.JMenu();
         mnAbrirClienteCadastro = new javax.swing.JMenuItem();
-        mnAbriClienteLista = new javax.swing.JMenuItem();
+        mnAbriClienteListaClientes = new javax.swing.JMenuItem();
+        mnAbrirClienteListaUser = new javax.swing.JMenuItem();
         mnSistema = new javax.swing.JMenu();
         mnAjuda = new javax.swing.JMenu();
 
@@ -53,14 +54,23 @@ public class FormEmpresa extends javax.swing.JFrame {
         });
         mnAbrirCliente.add(mnAbrirClienteCadastro);
 
-        mnAbriClienteLista.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        mnAbriClienteLista.setText("Lista");
-        mnAbriClienteLista.addActionListener(new java.awt.event.ActionListener() {
+        mnAbriClienteListaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnAbriClienteListaClientes.setText("Lista de Clientes");
+        mnAbriClienteListaClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnAbriClienteListaActionPerformed(evt);
+                mnAbriClienteListaClientesActionPerformed(evt);
             }
         });
-        mnAbrirCliente.add(mnAbriClienteLista);
+        mnAbrirCliente.add(mnAbriClienteListaClientes);
+
+        mnAbrirClienteListaUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnAbrirClienteListaUser.setText("Lista de Usuarios");
+        mnAbrirClienteListaUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAbrirClienteListaUserActionPerformed(evt);
+            }
+        });
+        mnAbrirCliente.add(mnAbrirClienteListaUser);
 
         mnAbrir.add(mnAbrirCliente);
 
@@ -93,9 +103,13 @@ public class FormEmpresa extends javax.swing.JFrame {
         openForm(new FormCliente());
     }//GEN-LAST:event_mnAbrirClienteCadastroActionPerformed
 
-    private void mnAbriClienteListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbriClienteListaActionPerformed
+    private void mnAbriClienteListaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbriClienteListaClientesActionPerformed
         openForm(new FormListaCliente());
-    }//GEN-LAST:event_mnAbriClienteListaActionPerformed
+    }//GEN-LAST:event_mnAbriClienteListaClientesActionPerformed
+
+    private void mnAbrirClienteListaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirClienteListaUserActionPerformed
+        openForm(new FormListaUser());
+    }//GEN-LAST:event_mnAbrirClienteListaUserActionPerformed
 
     private void openForm(JDialog f){
         f.setModal(true);
@@ -139,10 +153,11 @@ public class FormEmpresa extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem mnAbriClienteLista;
+    private javax.swing.JMenuItem mnAbriClienteListaClientes;
     private javax.swing.JMenu mnAbrir;
     private javax.swing.JMenu mnAbrirCliente;
     private javax.swing.JMenuItem mnAbrirClienteCadastro;
+    private javax.swing.JMenuItem mnAbrirClienteListaUser;
     private javax.swing.JMenu mnAjuda;
     private javax.swing.JMenu mnSistema;
     // End of variables declaration//GEN-END:variables

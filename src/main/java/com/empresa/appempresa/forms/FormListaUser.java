@@ -5,29 +5,30 @@
  */
 package com.empresa.appempresa.forms;
 
-import com.empresa.appempresa.entidades.Cliente;
-import com.empresa.appempresa.models.ModelCliente;
+import com.empresa.appempresa.entidades.Usuario;
+import com.empresa.appempresa.models.ModelUsuario;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author leehr
  */
-public class FormListaCliente extends javax.swing.JDialog {
+public class FormListaUser extends javax.swing.JDialog {
 
     DefaultTableModel tabela;
     /**
-     * Creates new form FormListaCliente
+     * Creates new form FormListaUser
      */
-    public FormListaCliente() {
+    public FormListaUser() {
         initComponents();
     }
+
     
-    private void montarTabela(){
-        tabela = (DefaultTableModel) tbClientes.getModel();
-        ModelCliente mc = new ModelCliente();
-        for (Cliente c : mc.listaClientes()) {
-          tabela.addRow(new Object[]{c.getNome(),c.getCpf()});
+     private void montarTabela(){
+        tabela = (DefaultTableModel) tbUser.getModel();
+        ModelUsuario mu = new ModelUsuario();
+        for (Usuario u : mu.listaUser()) {
+          tabela.addRow(new Object[]{u.getUser(),u.getSenha()});
         }
     }
 
@@ -41,41 +42,41 @@ public class FormListaCliente extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbClientes = new javax.swing.JTable();
+        tbUser = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Tabela de Clientes");
+        setTitle("Tabela de Usuários");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
         });
 
-        tbClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tbUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nome", "CPF"
+                "Usuarios", "Senhas"
             }
         ));
-        jScrollPane1.setViewportView(tbClientes);
+        jScrollPane1.setViewportView(tbUser);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         pack();
@@ -103,26 +104,26 @@ public class FormListaCliente extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormListaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormListaUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormListaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormListaUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormListaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormListaUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormListaCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormListaUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormListaCliente().setVisible(true);
+                new FormListaUser().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbClientes;
+    private javax.swing.JTable tbUser;
     // End of variables declaration//GEN-END:variables
 }

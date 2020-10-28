@@ -5,7 +5,9 @@
  */
 package com.empresa.appempresa.models;
 
+import com.empresa.appempresa.entidades.Cliente;
 import com.empresa.appempresa.entidades.Usuario;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -47,6 +49,14 @@ public class ModelUsuario {
         } catch (Exception e) {
             return null;
         }finally{
+            em.close();
+        }
+    }
+    public List<Usuario> listaUser(){
+        EntityManager em = ModelUsuario.openDB();
+        try{
+            return em.createQuery("Select u from Usuario u order by u.user").getResultList();
+        } finally{
             em.close();
         }
     }
