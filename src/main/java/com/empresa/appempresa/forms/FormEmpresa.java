@@ -34,6 +34,8 @@ public class FormEmpresa extends javax.swing.JFrame {
         mnAbrirCliente = new javax.swing.JMenu();
         mnAbrirClienteCadastro = new javax.swing.JMenuItem();
         mnAbriClienteListaClientes = new javax.swing.JMenuItem();
+        mnAbrirUsuario = new javax.swing.JMenu();
+        mnAbrirUsuarioCadastro = new javax.swing.JMenuItem();
         mnAbrirClienteListaUser = new javax.swing.JMenuItem();
         mnSistema = new javax.swing.JMenu();
         mnAjuda = new javax.swing.JMenu();
@@ -63,6 +65,19 @@ public class FormEmpresa extends javax.swing.JFrame {
         });
         mnAbrirCliente.add(mnAbriClienteListaClientes);
 
+        mnAbrir.add(mnAbrirCliente);
+
+        mnAbrirUsuario.setText("Usuário");
+
+        mnAbrirUsuarioCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        mnAbrirUsuarioCadastro.setText("Cadastro");
+        mnAbrirUsuarioCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAbrirUsuarioCadastroActionPerformed(evt);
+            }
+        });
+        mnAbrirUsuario.add(mnAbrirUsuarioCadastro);
+
         mnAbrirClienteListaUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
         mnAbrirClienteListaUser.setText("Lista de Usuarios");
         mnAbrirClienteListaUser.addActionListener(new java.awt.event.ActionListener() {
@@ -70,9 +85,9 @@ public class FormEmpresa extends javax.swing.JFrame {
                 mnAbrirClienteListaUserActionPerformed(evt);
             }
         });
-        mnAbrirCliente.add(mnAbrirClienteListaUser);
+        mnAbrirUsuario.add(mnAbrirClienteListaUser);
 
-        mnAbrir.add(mnAbrirCliente);
+        mnAbrir.add(mnAbrirUsuario);
 
         jMenuBar1.add(mnAbrir);
 
@@ -110,6 +125,10 @@ public class FormEmpresa extends javax.swing.JFrame {
     private void mnAbrirClienteListaUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirClienteListaUserActionPerformed
         openForm(new FormListaUser());
     }//GEN-LAST:event_mnAbrirClienteListaUserActionPerformed
+
+    private void mnAbrirUsuarioCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirUsuarioCadastroActionPerformed
+        new FormUsuario().setVisible(true);
+    }//GEN-LAST:event_mnAbrirUsuarioCadastroActionPerformed
 
     private void openForm(JDialog f){
         f.setModal(true);
@@ -158,6 +177,8 @@ public class FormEmpresa extends javax.swing.JFrame {
     private javax.swing.JMenu mnAbrirCliente;
     private javax.swing.JMenuItem mnAbrirClienteCadastro;
     private javax.swing.JMenuItem mnAbrirClienteListaUser;
+    private javax.swing.JMenu mnAbrirUsuario;
+    private javax.swing.JMenuItem mnAbrirUsuarioCadastro;
     private javax.swing.JMenu mnAjuda;
     private javax.swing.JMenu mnSistema;
     // End of variables declaration//GEN-END:variables

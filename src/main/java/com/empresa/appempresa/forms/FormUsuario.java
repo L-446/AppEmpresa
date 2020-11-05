@@ -9,7 +9,6 @@ import com.empresa.appempresa.entidades.Usuario;
 import com.empresa.appempresa.models.ModelUsuario;
 import java.security.MessageDigest;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
 
 /**
  *
@@ -23,6 +22,7 @@ public class FormUsuario extends javax.swing.JFrame {
     public FormUsuario() {
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
